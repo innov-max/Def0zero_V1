@@ -68,7 +68,7 @@
                 android:id="@+id/timeout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alfa_slab_one"
+                android:layout_marginStart="6dp"
                 android:text="35"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -101,7 +101,7 @@
                 android:id="@+id/distance"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alfa_slab_one"
+                android:layout_marginStart="8dp"
                 android:text="35"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -133,8 +133,8 @@
                 android:id="@+id/drone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alfa_slab_one"
-                android:text="Drone"
+                android:text="35"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -164,8 +164,8 @@
                 android:id="@+id/ranger"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alfa_slab_one"
-                android:text="Ranger"
+                android:text="35"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -187,7 +187,6 @@
              android:layout_height="wrap_content"
              android:layout_margin="3dp"
              android:orientation="vertical"
-             android:layout_marginStart="3dp"
              android:layout_gravity="center"
              android:background="@drawable/button"
 
@@ -196,28 +195,94 @@
                 android:id="@+id/panick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/alfa_slab_one"
-                android:text="panick"
-
+                android:text="35"
+                android:layout_marginStart="8dp"
                 android:textColor="@color/white"
-                android:textSize="19sp" />
+                android:textSize="20sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/alfa_slab_one"
+                android:text="Miles out"
+                android:textColor="@color/white" />
 
 
          </LinearLayout>
-         <View
-             android:layout_width="1dp"
-             android:layout_height="match_parent"
-             android:layout_marginStart="3dp"
-             android:background="#000000"
-             android:backgroundTint="@color/white"/>
+
 
       </LinearLayout>
 
    </LinearLayout>
 
-   <Space
+   <LinearLayout
        android:layout_width="wrap_content"
-       android:layout_height="100dp"
-       android:layout_weight="1" />
+       android:layout_height="wrap_content"
+      android:orientation="vertical"
+       android:layout_margin="3dp">
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+         android:orientation="horizontal"
+          android:layout_marginStart="10dp">
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:orientation="vertical">
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+            android:text="9 mins"
+             android:textSize="20sp"
+             android:textStyle="normal|bold"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="4.6"
+                android:textSize="20sp"
+                android:textStyle="normal|bold"/>
+               <ImageView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                  android:src="@drawable/star"/>
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="(126 reviews)"
+                   android:textStyle="normal|bold"
+                   android:textSize="16sp"/>
+            </LinearLayout>
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+               >
+
+               <Button
+                   android:id="@+id/myButton"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="Navigate"
+                   android:backgroundTint="#4CAF50"
+                   android:textSize="16sp"
+                   android:layout_gravity="center"
+                   android:drawableStart="@drawable/direction_icon" />
+            </FrameLayout>
+
+
+
+
+
+
+
+         </LinearLayout>
+
+      </LinearLayout>
+
+
+   </LinearLayout>
 
 </LinearLayout>
