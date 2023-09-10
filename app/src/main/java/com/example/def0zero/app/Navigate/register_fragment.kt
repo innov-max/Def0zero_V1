@@ -6,12 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.def0zero.R
-
+import com.example.def0zero.databinding.FragmentRegisterBinding
+import com.example.def0zero.databinding.FragmentSpashFragment1Binding
 
 
 class register_fragment : Fragment() {
 
-
+    private var _binding: FragmentRegisterBinding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -23,8 +25,9 @@ class register_fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_register, container, false)
+        _binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
 

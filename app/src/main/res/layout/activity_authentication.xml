@@ -5,14 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".app.Navigate.authentication">
+    tools:context=".app.Navigate.authentication"
+    android:id="@+id/fragment_container">
 
-    <fragment
-        android:layout_margin="5dp"
-        android:id="@+id/fragment_container"
-        android:name="com.example.def0zero.app.dashboard.maps_fragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_register" />
 
 </LinearLayout>

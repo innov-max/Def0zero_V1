@@ -17,8 +17,13 @@ class splash : AppCompatActivity() {
         setContentView(binding.root)
 
         if (savedInstanceState == null) {
+            val first_fragment = spash_fragment1()
+            supportFragmentManager.beginTransaction()
+                .add(R.id.fragment_container, first_fragment)
+                .commit()
 
             Handler().postDelayed({
+                fragmentManager.popBackStack()
                 val replacementFragment = splash_fragment2()
                 supportFragmentManager.beginTransaction()
                     .replace(R.id.fragment_container, replacementFragment)

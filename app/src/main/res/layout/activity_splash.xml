@@ -4,14 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/fragment_container"
     tools:context=".app.splash">
 
-    <fragment
 
-        android:id="@+id/fragment_container"
-        android:name="com.example.def0zero.app.spash_fragment1"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:layout="@layout/fragment_spash_fragment1" />
 
 </LinearLayout>

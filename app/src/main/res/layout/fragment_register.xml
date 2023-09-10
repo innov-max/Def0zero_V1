@@ -14,11 +14,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="45dp"
         android:gravity="center"
-        android:text="Login"
+        android:text="Get Started"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:textStyle="bold" />
     <androidx.cardview.widget.CardView
+        android:background="@color/white"
         app:cardCornerRadius="25dp"
         app:cardElevation="10dp"
         android:layout_gravity="center"
@@ -26,12 +27,14 @@
         android:layout_marginStart="38dp"
         android:layout_marginEnd="38dp"
         app:cardUseCompatPadding="true"
+        android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/white">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="Login"
+                    android:textStyle="normal|bold"
                     android:paddingTop="5dp"
                     android:paddingRight="15dp"
                     android:paddingLeft="15dp"
@@ -63,6 +67,7 @@
                     android:paddingRight="15dp"
                     android:paddingLeft="15dp"
                     android:text="SignUp"
+                    android:textStyle="normal|bold"
                     android:paddingTop="5dp"
                     android:textAlignment="center"
                     android:textColor="@color/black"
@@ -74,6 +79,7 @@
                 android:id="@+id/loginLayout"
                 android:background="@color/white"
                 android:padding="25dp"
+                android:layout_marginTop="10dp"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
@@ -96,7 +102,7 @@
                         android:ems="10"
                         android:textSize="13sp"
                         android:textColor="@color/black"
-                        android:textStyle="normal"
+                        android:textStyle="normal|bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -118,7 +124,7 @@
                         android:ems="10"
                         android:textSize="13sp"
                         android:textColor="@color/black"
-                        android:textStyle="normal"
+                        android:textStyle="normal|bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
                 </com.google.android.material.textfield.TextInputLayout>
@@ -132,7 +138,7 @@
                     android:textStyle="normal"/>
                 <Button
                     app:shapeAppearanceOverlay="@style/button5"
-                    android:backgroundTint="#191C15"
+                    android:backgroundTint="#4CAF50"
                     android:id="@+id/btnLogin"
                     android:text="Login"
                     android:textSize="17sp"
@@ -155,7 +161,7 @@
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:textStyle="normal"/>
+                    android:textStyle="normal|bold"/>
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -163,12 +169,13 @@
                     android:textColor="@color/black"
                     android:textSize="15sp"
                     android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="25dp"
                     android:layout_gravity="center"
                     android:gravity="center"
                     android:textAlignment="center"
-                    android:textStyle="normal"/>
+                    android:textStyle="normal|bold"/>
                 <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_marginTop="20dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
