@@ -24,8 +24,7 @@
         app:cardElevation="10dp"
         android:layout_gravity="center"
         android:layout_marginTop="50dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginEnd="38dp"
+
         app:cardUseCompatPadding="true"
         android:layout_marginBottom="20dp"
         android:layout_width="match_parent"
@@ -91,7 +90,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/button4"
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
                     app:boxStrokeWidth="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -101,7 +100,8 @@
                         android:id="@+id/idemail"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal|bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -112,7 +112,7 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/button4"
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
                     app:boxStrokeWidth="1dp"
                     app:endIconMode="password_toggle"
                     android:layout_width="match_parent"
@@ -123,7 +123,8 @@
                         android:id="@+id/idPassword"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal|bold"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -134,7 +135,8 @@
                     android:textSize="11sp"
                     android:text="Forget Password"
                     android:textAlignment="textEnd"
-                    android:textColor="@color/black"
+                    android:textColor="@color/green"
+                    android:textColorHint="@color/green"
                     android:textStyle="normal"/>
                 <Button
                     app:shapeAppearanceOverlay="@style/button5"
@@ -222,8 +224,8 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
+                    android:textColorHint="@color/green"
                     app:boxStrokeWidth="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -233,7 +235,8 @@
                         android:id="@+id/UserName"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
@@ -244,7 +247,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/button4"
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
+                    android:textColorHint="@color/green"
                     app:boxStrokeWidth="1dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -254,7 +258,8 @@
                         android:id="@+id/emailSignUp"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -266,7 +271,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/button4"
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
+                    android:textColorHint="@color/green"
                     app:boxStrokeWidth="1dp"
                     app:endIconMode="password_toggle"
                     android:layout_width="match_parent"
@@ -277,7 +283,8 @@
                         android:id="@+id/PasswordSignUp"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
@@ -288,7 +295,8 @@
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
                     app:shapeAppearanceOverlay="@style/button4"
-                    app:boxStrokeColor="@color/darkgrey"
+                    app:boxStrokeColor="@color/green"
+                    android:textColorHint="@color/green"
                     app:boxStrokeWidth="1dp"
                     app:endIconMode="password_toggle"
                     android:layout_width="match_parent"
@@ -299,19 +307,31 @@
                         android:id="@+id/Passwordconfirm"
                         android:ems="10"
                         android:textSize="13sp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/green"
+                        android:textColorHint="@color/green"
                         android:textStyle="normal"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical">
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <ProgressBar
+                        android:id="@+id/SignUpProgressBar"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="5dp"
+                        android:visibility="gone"
+                        android:layout_marginBottom="10dp"/>
                     <Button
-                        android:backgroundTint="#191C15"
+                        app:shapeAppearanceOverlay="@style/button5"
+                        android:backgroundTint="#4CAF50"
                         android:id="@+id/btnsignUp"
-                        android:text="SignUp"
+                        android:text="Sign Up"
                         android:textSize="17sp"
                         android:elevation="15dp"
                         android:gravity="center"
@@ -321,13 +341,7 @@
                         android:textAllCaps="false"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"/>
-                    <ProgressBar
-                        android:id="@+id/SignUpProgressBar"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:visibility="gone" />
+
 
                 </LinearLayout>
 

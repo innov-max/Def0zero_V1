@@ -9,9 +9,13 @@ import androidx.navigation.fragment.findNavController
 import com.example.def0zero.R
 import com.example.def0zero.databinding.FragmentSpashFragment1Binding
 import com.example.def0zero.databinding.FragmentSplashFragment2Binding
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 
 
 class spash_fragment1 : Fragment() {
+
+
 
     private var _binding: FragmentSpashFragment1Binding? = null
     private val binding get() = _binding!!
@@ -36,4 +40,8 @@ class spash_fragment1 : Fragment() {
 
             return view
         }
+
+
+
     }
+

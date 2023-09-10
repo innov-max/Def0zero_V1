@@ -18,19 +18,13 @@
         <activity
             android:name=".app.Navigate.authentication"
             android:exported="false" />
-        <!--
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
 
-             To get one, follow the directions here:
-
-                https://developers.google.com/maps/documentation/android-sdk/get-api-key
-
-             Once you have your API key (it starts with "AIza"), define a new property in your
-             project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
-             "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
-        -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAxyFn7jxi8r-GZZhQI_LeDHmePX7jX0C8" />
+            android:value="${MAPS_API_KEY}" />
 
         <activity
             android:name=".app.Navigate.MapsActivity"
@@ -38,8 +32,15 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".app.Navigate.Navigate"
-            android:exported="false" />
+            android:exported="true">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
+            <category android:name="android.intent.category.LAUNCHER" />
+
+        </intent-filter>
+
+        </activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
@@ -49,13 +50,9 @@
             android:exported="false" />
         <activity
             android:name=".app.splash"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+            android:exported="false"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+
     </application>
 
 </manifest>
