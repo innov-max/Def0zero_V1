@@ -3,12 +3,17 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
     id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
+    
 
 }
 
 android {
     namespace 'com.example.def0zero'
     compileSdk 34
+
+    viewBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.example.def0zero"
@@ -33,6 +38,9 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        viewBinding true
+    }
 }
 
 dependencies {
@@ -45,6 +53,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.1'
     implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
     implementation 'com.google.firebase:firebase-auth:22.1.1'
+    implementation 'androidx.core:core-ktx:+'
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.5'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'

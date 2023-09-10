@@ -1,5 +1,6 @@
 package com.example.def0zero.app
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import androidx.fragment.app.Fragment
@@ -8,6 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import com.example.def0zero.R
+import com.example.def0zero.app.Navigate.authentication
+import com.example.def0zero.databinding.FragmentSpashFragment1Binding
+import com.example.def0zero.databinding.FragmentSplashFragment2Binding
 
 class splash_fragment2 : Fragment() {
 
@@ -16,6 +20,8 @@ class splash_fragment2 : Fragment() {
     private val maxProgress = 100
     private val delayMillis = 7000 // 7 seconds in milliseconds
 
+    private var _binding: FragmentSplashFragment2Binding? = null
+    private val binding get() = _binding!!
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -27,7 +33,9 @@ class splash_fragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_splash_fragment2, container, false)
+        _binding = FragmentSplashFragment2Binding.inflate(inflater, container, false)
+        val view = binding.root
+
         progressBar = view.findViewById(R.id.progressBar1)
 
         // Start the progress update
@@ -46,8 +54,18 @@ class splash_fragment2 : Fragment() {
                 if (progressStatus < maxProgress) {
                     handler.postDelayed(this, (delayMillis / maxProgress).toLong())
                 } else {
-                    // Progress bar is full, navigate to Fragment3 using Navigation
+                    binding.btnContinue.visibility = View.VISIBLE
+                    try{
 
+                    binding.btnContinue.setOnClickListener {
+                        val intent = Intent(activity, authentication::class.java)
+
+                        startActivity(intent)
+
+                    }
+                    } catch (e:Exception){
+                        e.printStackTrace()
+                    }
                 }
             }
         }, (delayMillis / maxProgress).toLong())

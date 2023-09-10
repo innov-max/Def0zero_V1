@@ -34,7 +34,7 @@
        android:layout_margin="5dp"
        android:id="@+id/mapView"
        android:layout_width="match_parent"
-       android:layout_height="392dp" />
+       android:layout_height="350dp" />
    <TextView
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
@@ -232,6 +232,7 @@
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
             android:text="9 mins"
+             android:textColor="@color/white"
              android:textSize="20sp"
              android:textStyle="normal|bold"/>
             <LinearLayout
@@ -242,6 +243,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="4.6"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="normal|bold"/>
                <ImageView
@@ -252,14 +254,22 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:text="(126 reviews)"
+                   android:textColor="@color/white"
                    android:textStyle="normal|bold"
                    android:textSize="16sp"/>
             </LinearLayout>
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-               >
+                android:layout_gravity="center">
+               <LinearLayout
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:orientation="horizontal">
+                  <ImageView
+                      android:layout_width="wrap_content"
+                      android:layout_height="60dp"
+                     android:src="@drawable/direction"/>
 
                <Button
                    android:id="@+id/myButton"
@@ -269,7 +279,9 @@
                    android:backgroundTint="#4CAF50"
                    android:textSize="16sp"
                    android:layout_gravity="center"
-                   android:drawableStart="@drawable/direction_icon" />
+                   android:drawableStart="@drawable/direction" />
+
+               </LinearLayout>
             </FrameLayout>
 
 
@@ -279,6 +291,13 @@
 
 
          </LinearLayout>
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="116dp"
+            android:src="@drawable/img"
+             android:layout_margin="5dp"/>
+
+
 
       </LinearLayout>
 
