@@ -6,11 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.def0zero.R
 import com.example.def0zero.app.models.UserMap
 import com.example.def0zero.app.models.places
 import com.example.def0zero.databinding.ActivityNavigateBinding
-
+const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
 class Navigate : AppCompatActivity() {
     private lateinit var binding:ActivityNavigateBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,13 +22,16 @@ class Navigate : AppCompatActivity() {
         binding.rvnavigateplaces.adapter = MapsAdapter(this, userMaps, object : MapsAdapter.OnClickListener {
             override fun onItemClick(position: Int) {
                Log.i(TAG, "onitemClick $position")
+                // when user taps on the view in the recyclerview
+                val intent = Intent(this@Navigate,MapsActivity::class.java)
+                intent.putExtra(EXTRA_USER_MAP,userMaps[position])
+                startActivity(intent)
             }
 
         })
 
-        // when user taps on the view in the recyclerview
-val intent = Intent(this@Navigate,MapsActivity::class.java)
-        startActivity(intent)
+
+
     }
 
         private fun generateSampleData(): List<UserMap> {
