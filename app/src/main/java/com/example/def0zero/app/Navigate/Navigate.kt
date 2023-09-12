@@ -29,6 +29,11 @@ class Navigate : AppCompatActivity() {
             }
 
         })
+        binding.fab.setOnClickListener {
+            Log.i(TAG, "Tap on FAB")
+
+            val intent = Intent(this,)
+        }
 
 
 
