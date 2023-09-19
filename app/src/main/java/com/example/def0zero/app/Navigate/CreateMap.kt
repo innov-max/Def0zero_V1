@@ -1,8 +1,10 @@
 package com.example.def0zero.app.Navigate
 
+import android.content.DialogInterface
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AlertDialog
 import com.example.def0zero.R
 
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -55,9 +57,8 @@ class CreateMap : AppCompatActivity(), OnMapReadyCallback {
         }
         mMap.setOnMapClickListener {latLng->
             Log.i(TAG, "onMapLongClickListener")
-           val marker = mMap.addMarker(MarkerOptions().position(latLng).title("my new marker"). snippet("a cool snippet"))
+            showAlertDialog(latLng)
 
-                markers.add(marker)
 
         }
 
@@ -65,5 +66,22 @@ class CreateMap : AppCompatActivity(), OnMapReadyCallback {
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+    }
+
+    private fun showAlertDialog(latLng: LatLng) {
+        val dialog =
+        AlertDialog.Builder(this)
+            .setTitle("Create marker")
+            .setMessage("hello")
+            .setNegativeButton("Cancel", null)
+            .setPositiveButton("Ok",null)
+            .show()
+
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setOnClickListener {
+            val marker = mMap.addMarker(MarkerOptions().position(latLng).title("my new marker"). snippet("a cool snippet"))
+            markers.add(marker!!)
+            dialog.dismiss()
+        }
+
     }
 }
