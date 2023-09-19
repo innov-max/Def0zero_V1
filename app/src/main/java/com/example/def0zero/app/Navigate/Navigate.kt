@@ -1,5 +1,6 @@
 package com.example.def0zero.app.Navigate
 
+import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,6 +11,8 @@ import com.example.def0zero.app.models.UserMap
 import com.example.def0zero.app.models.places
 import com.example.def0zero.databinding.ActivityNavigateBinding
 const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
+const val EXTRA_MAP_TITLE = "EXTRA_MAP_TITLE"
+private const val REQUEST_CODE = 1234
 class Navigate : AppCompatActivity() {
     private lateinit var binding:ActivityNavigateBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,11 +35,22 @@ class Navigate : AppCompatActivity() {
         binding.fab.setOnClickListener {
             Log.i(TAG, "Tap on FAB")
 
-            val intent = Intent(this,)
+            val intent = Intent(this,CreateMap::class.java)
+            intent.putExtra(EXTRA_MAP_TITLE, "new map name")
+            startActivityForResult(intent,REQUEST_CODE)
         }
 
 
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        if (requestCode == REQUEST_CODE && resultCode == Activity.RESULT_OK){
+            //get new map data
+
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 
         private fun generateSampleData(): List<UserMap> {
