@@ -44,8 +44,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val boundsBuilder = LatLngBounds.builder()
       for (place in userMap.Place){
 
-            val LatLng = LatLng(place.latitude,place.longitude)
-            mMap.addMarker(MarkerOptions().position(LatLng).title(place.title).snippet(place.description))
+            val LatLng = place?.let { LatLng(it.latitude,place.longitude) }
+          LatLng?.let { MarkerOptions().position(it).title(place.title).snippet(place.description) }
+              ?.let { mMap.addMarker(it) }
         }
 
 
