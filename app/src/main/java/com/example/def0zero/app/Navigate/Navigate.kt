@@ -2,6 +2,7 @@ package com.example.def0zero.app.Navigate
 
 import android.app.Activity
 import android.content.ContentValues.TAG
+import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -16,10 +17,18 @@ import com.example.def0zero.R
 import com.example.def0zero.app.models.UserMap
 import com.example.def0zero.app.models.places
 import com.example.def0zero.databinding.ActivityNavigateBinding
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
+import java.io.ObjectInputStream
+import java.io.ObjectOutput
+import java.io.ObjectOutputStream
 
 const val EXTRA_USER_MAP = "EXTRA_USER_MAP"
 const val EXTRA_MAP_TITLE = "EXTRA_MAP_TITLE"
-private const val REQUEST_CODE = 1234
+private const val REQUEST_CODE = 123
+private const val FILENAME = "UserMAps.data"
+
 class Navigate : AppCompatActivity() {
     private lateinit var binding:ActivityNavigateBinding
     private lateinit var userMaps: MutableList<UserMap>
@@ -93,6 +102,30 @@ class Navigate : AppCompatActivity() {
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
+
+
+    private fun serializeUserMaps(context: Context, userMaps:List<UserMap>){
+
+        Log.i(TAG, "serialUserMaps")
+        ObjectOutputStream(FileOutputStream(getDatafile(context))).use {it.writeObject(userMaps) }
+    }
+
+    private fun deserializeUserMaps(context: Context):List<UserMap>{
+
+        Log.i(TAG,"desrealizeUserMaps")
+        getDatafile(context)
+        val dataFile = getDatafile(context)
+        if (!dataFile.exists()){
+            Log.i(TAG, "Data file does not exist yet")
+            return emptyList()
+        }
+        ObjectInputStream(FileInputStream(dataFile)).use { return it.readObject() as List<UserMap> }
+    }
+    private fun getDatafile(context : Context): File {
+        Log.i(TAG,"Getting file from directory ${context.filesDir}")
+        return File(context.filesDir, FILENAME)
+    }
+
 
         private fun generateSampleData(): List<UserMap> {
             return listOf(
