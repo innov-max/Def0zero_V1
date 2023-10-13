@@ -37,7 +37,9 @@ class Navigate : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityNavigateBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        userMaps = generateSampleData().toMutableList()
+
+
+        userMaps = deserializeUserMaps(this).toMutableList()
         binding.rvnavigateplaces.layoutManager = LinearLayoutManager(this)
         // set adapter on the recycler view
         mapAdapter = MapsAdapter(this, userMaps, object : MapsAdapter.OnClickListener {
@@ -98,6 +100,7 @@ class Navigate : AppCompatActivity() {
             Log.i(TAG,"onActivity Result with new map title ${userMap.title}")
             userMaps.add(userMap)
             mapAdapter.notifyItemInserted(userMaps.size -1)
+            serializeUserMaps(this,userMaps)
 
         }
         super.onActivityResult(requestCode, resultCode, data)
@@ -112,7 +115,7 @@ class Navigate : AppCompatActivity() {
 
     private fun deserializeUserMaps(context: Context):List<UserMap>{
 
-        Log.i(TAG,"desrealizeUserMaps")
+        Log.i(TAG,"deserealizeUserMaps")
         getDatafile(context)
         val dataFile = getDatafile(context)
         if (!dataFile.exists()){
